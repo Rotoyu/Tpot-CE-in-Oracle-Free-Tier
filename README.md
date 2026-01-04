@@ -75,6 +75,10 @@ Selected Source Type CIDR
 Typed 0.0.0.0/0 for Source CIDR
 Clicked Create
 
+### Expanded storage
+
+https://github.com/mgrimace/Minecraft-on-Oracle/blob/main/Oracle_additional_settings.md
+
 ### Installing tpotce
 
 On terminal, ran sudo chmod 400 /path-to-key/ssh-key-2026-xx-xx.key
