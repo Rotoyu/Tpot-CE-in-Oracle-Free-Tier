@@ -79,8 +79,24 @@ Reference: https://github.com/mgrimace/Minecraft-on-Oracle/blob/main/README.md#F
 
 ---
 ### Expanded storage
+Reference: https://github.com/mgrimace/Minecraft-on-Oracle/blob/main/Oracle_additional_settings.md
 
-https://github.com/mgrimace/Minecraft-on-Oracle/blob/main/Oracle_additional_settings.md
+1. Clicked the Navigation Menu
+2. Clicked Instance
+3. Clicked tpot_instance
+4. Clicked Storage
+5. Clicked the three dots to the right of tpot_instance (Boot Volume)
+6. Clicked View boot volume details
+7. Clicked Edit
+8. Typed 200
+9. Clicked Update
+10. Accessed instance via SSH
+11. ran ```sudo dd iflag=direct if=/dev/<device_name> of=/dev/null count=1 echo "1" | sudo tee /sys/class/block/<device_name>/device/rescan```
+12. ran ```sudo dd iflag=direct if=/dev/oracleoci/oraclevda of=/dev/null count=1
+echo "1" | sudo tee /sys/class/block/`readlink /dev/oracleoci/oraclevda | cut -d'/' -f 2`/device/rescan```
+13. ran ```growpart /dev/sda 1```
+14. ran ```resize2fs /dev/sda1```
+15. ran ```df -h```
 
 ---
 ### Installing tpotce
@@ -90,19 +106,19 @@ Note: I am running this on a linux OS, so I will use chmod to change permissions
 
 ran the following commands:
 
-1. ping x.x.x.x (if this fails, your machine is not up or you messed up on the previous steps)
-2. ssh -i "/path-to-key/ssh-key-2026-xx-xx.key" opc@x.x.x.x
-3. sudo dnf update -y && sudo dnf upgrade -y
-4. sudo dnf install curl git firewalld -y
-5. git clone https://github.com/telekom-security/tpotce
-6. ./tpotce/install.sh
+1. ```ping x.x.x.x (if this fails, your machine is not up or you messed up on the previous steps)```
+2. ```ssh -i "/path-to-key/ssh-key-2026-xx-xx.key" opc@x.x.x.x```
+3. ```sudo dnf update -y && sudo dnf upgrade -y```
+4. ```sudo dnf install curl git firewalld -y```
+5. ```git clone https://github.com/telekom-security/tpotce```
+6. ```./tpotce/install.sh```
 7. Pressed y then Pressed Enter
 8. Pressed h then Pressed Enter
 9. Typed Honey for web user name
 10. Pressed y then Pressed Enter
 11. Typed password for web user then Pressed Enter
 12. Typed password again then Pressed Enter
-13. sudo reboot
+13. ```sudo reboot```
 
 ---
 ### Accessing tpotce WebUI
@@ -111,12 +127,10 @@ ran the following commands:
 2.  Logged in using credentials made when installing tpotce
 3.  Look around the services to get hands-on experience with data from a live honeypot
 
-LICENSE:
-MIT License. See the License file for details.
-
 ---
 ### Accessing VM instance
-Typed ssh -i "/path-to-key/ssh-key-2026-xx-xx.key" opc@x.x.x.x -p 64297
+Ran ```ssh -i "/path-to-key/ssh-key-2026-xx-xx.key" opc@x.x.x.x -p 64295```
 
 ---
 Written by Rotoyu
+LICENSE: MIT License. See the License file for details.
