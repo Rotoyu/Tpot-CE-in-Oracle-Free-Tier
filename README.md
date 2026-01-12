@@ -42,18 +42,24 @@ https://docs.cloud.oracle.com/iaas/Content/GSG/Tasks/buysubscription_topic-Upgra
 11. Clicked Select image
 12. Clicked Change shape
 13. Selected the arrow next to VM.Standard.A1.Flex (the one that says Always Free-eligible)
-14. Typed 4 for the Number of OCPUs (Max limit)
+14. Typed 4 for the Number of OCPUs (4 is the Max limit for free tier, )
 15. Clicked Select Shape
 16. Clicked Next, Next
 17. Typed tpot_VNIC for the VNIC name
-18. Select existing virtual cloud network for the Primary network
+18. Selected existing virtual cloud network for the Primary network
 20. Selected tpot_vcn for virtual cloud network
 21. Check Automatically assign public IPv4 address
 22. Clicked Download private key
 23. Clicked Next
-24. Clicked Next
-25. Clicked Create
-26. Once the instance is created, note the public IP Address (Replace x.x.x.x with your assigned address.)
+24. Clicked Attach block Volume
+25. Selected Create new volume for Volume type
+26. Typed tpot_block_volume for name
+27. Selected Custom for Volume size and performance
+28. Typed 200 for Volume size (200 is the limit for the free tier, but choose however much you want. Oracle sets the default as 50)
+30. Clicked Attach
+31. Clicked Next
+32. Clicked Create
+33. Once the instance is created, note the public IP Address (Replace x.x.x.x with your assigned address.)
 
 ---
 ## Creating Firewall Rules
@@ -78,27 +84,6 @@ Reference: https://github.com/mgrimace/Minecraft-on-Oracle/blob/main/README.md#F
 17. Clicked Create
 
 ---
-### Expanded storage
-Reference: https://github.com/mgrimace/Minecraft-on-Oracle/blob/main/Oracle_additional_settings.md
-
-1. Clicked the Navigation Menu
-2. Clicked Instance
-3. Clicked tpot_instance
-4. Clicked Storage
-5. Clicked the three dots to the right of tpot_instance (Boot Volume)
-6. Clicked View boot volume details
-7. Clicked Edit
-8. Typed 200
-9. Clicked Update
-10. Accessed instance via SSH
-11. ran ```sudo dd iflag=direct if=/dev/<device_name> of=/dev/null count=1 echo "1" | sudo tee /sys/class/block/<device_name>/device/rescan```
-12. ran ```sudo dd iflag=direct if=/dev/oracleoci/oraclevda of=/dev/null count=1
-echo "1" | sudo tee /sys/class/block/`readlink /dev/oracleoci/oraclevda | cut -d'/' -f 2`/device/rescan```
-13. ran ```growpart /dev/sda 1```
-14. ran ```resize2fs /dev/sda1```
-15. ran ```df -h```
-
----
 ### Installing tpotce
 
 On terminal, ran sudo chmod 400 /path-to-key/ssh-key-2026-xx-xx.key
@@ -113,11 +98,11 @@ ran the following commands:
 5. ```git clone https://github.com/telekom-security/tpotce```
 6. ```./tpotce/install.sh```
 7. Pressed y then Pressed Enter
-8. Pressed h then Pressed Enter
+8. Pressed h then Pressed Enter (I chose hive mode, but if you have less than 4 OCPUs you may need to choose mobile with option i)
 9. Typed Honey for web user name
 10. Pressed y then Pressed Enter
 11. Typed password for web user then Pressed Enter
-12. Typed password again then Pressed Enter
+12. Typed password again then pressed Enter
 13. ```sudo reboot```
 
 ---
