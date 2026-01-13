@@ -100,7 +100,7 @@ ran the following commands:
 5. ```git clone https://github.com/telekom-security/tpotce```
 6. ```./tpotce/install.sh```
 7. Pressed y then Pressed Enter
-8. Pressed h then Pressed Enter (I chose hive mode, but if you have less than 4 OCPUs you may need to choose mobile with option i)
+8. Pressed h then Pressed Enter (I chose hive mode, but if you have less than 4 OCPUs you may need to choose mini with option i)
 9. Typed Honey for web user name
 10. Pressed y then Pressed Enter
 11. Typed password for web user then Pressed Enter
