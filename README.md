@@ -71,17 +71,19 @@ Reference: https://github.com/mgrimace/Minecraft-on-Oracle/blob/main/README.md#F
 4. Clicked Default-Security List for tpot_VCN
 5. Clicked Security rules
 6. Clicked Add Ingress Rules
-7. Typed 0.0.0.0/0 
-8. Clicked the Navigation Menu
-9. Clicked Virtual cloud networks
-10. Clicked tpot_VCN
-11. Clicked security
-12. Clicked Create Network Security Group
-13. Typed tpot_NSG
-14. Selected Direction Ingress
-15. Selected Source Type CIDR
-16. Typed 0.0.0.0/0 for Source CIDR
-17. Clicked Create
+7. Typed 0.0.0.0/0
+8. Clicked Add Ingress Rules
+7. Typed ::/0 
+9. Clicked the Navigation Menu
+10. Clicked Virtual cloud networks
+11. Clicked tpot_VCN
+12. Clicked security
+13. Clicked Create Network Security Group
+14. Typed tpot_NSG
+15. Selected Direction Ingress
+16. Selected Source Type CIDR
+17. Typed 0.0.0.0/0 for Source CIDR
+18. Clicked Create
 
 ---
 ### Installing tpotce
