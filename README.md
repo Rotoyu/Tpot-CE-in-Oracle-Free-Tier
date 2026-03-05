@@ -55,7 +55,7 @@ https://docs.cloud.oracle.com/iaas/Content/GSG/Tasks/buysubscription_topic-Upgra
 25. Selected Create new volume for Volume type
 26. Typed tpot_block_volume for name
 27. Selected Custom for Volume size and performance
-28. Typed 200 for Volume size (200 is the limit for the free tier, but choose however much you want. Oracle sets the default as 50)
+28. Typed 150 for Volume size (Oracle has a limit for 200GB but uses 50GB for the boot volume, so 150GB is the max that can be set)
 30. Clicked Attach
 31. Clicked Next
 32. Clicked Create
